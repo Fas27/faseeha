@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+         Search Bar 
+        
+    </title>
+      
+    
+    
+</head>
+  
+<body>
+
+    <style type="text/css">
+    html {
+        background-color:  rgb(42, 219, 250);
+    }
+
+
+        #searchbar{
+     margin-left: 15%;
+     padding:15px;
+     border-radius: 10px;
+   }
+ 
+   input[type=text] {
+      width: 30%;
+      -webkit-transition: width 0.15s ease-in-out;
+      transition: width 0.15s ease-in-out;
+   }
+ 
+   input[type=text]:focus {
+     width: 70%;
+   }
+ 
+  #list{
+    font-size:  1.5em;
+    margin-left: 90px;
+   }
+
+   .Districts{
+   display: list-item;    
+  } 
+ 
+
+    </style>
+      
+   
+    <input id="searchbar" onkeyup="search_Districts()" type="text"
+        name="search" placeholder="Search Districts...">
+      
+    
+    <ol id='list'>
+        <li class="Districts"><a href="gallery.html">Ampara District</a></li>
+        <li class="Districts"><a href="gallery.html">Anuradhapura District</a></li>
+        <li class="Districts"><a href="gallery.html">Badulla District</a></li>
+        <li class="Districts"><a href="gallery.html"> Batticaloa District</a></li>
+        <li class="Districts"><a href="gallery.html">Colombo District</a></li>
+        <li class="Districts"><a href="gallery.html">Galle District</a></li>
+        <li class="Districts"><a href="gallery.html">Gampaha District</a></li>
+        <li class="Districts"><a href="gallery.html">Hambanthota District</a></li>
+        <li class="Districts"><a href="gallery.html">Kalutara District</a></li>
+        <li class="Districts"><a href="gallery.html">Kandy District</a></li>
+        <li class="Districts"><a href="gallery.html">Kegalle District</a></li>
+        <li class="Districts"><a href="gallery.html">Kilinochchi District</a></li>
+        <li class="Districts"><a href="gallery.html">Kurunegala District</a></li>
+        <li class="Districts"><a href="gallery.html">Mannar District</a></li>
+        <li class="Districts"><a href="gallery.html">Matale District</a></li>
+        <li class="Districts"><a href="gallery.html">Matara District</a></li>
+        <li class="Districts"><a href="gallery.html">Monaragala District</a></li>
+        <li class="Districts"><a href="gallery.html">Mullaitivu District</a></li>
+        <li class="Districts"><a href="gallery.html">Nuwara Eliya District</a></li>
+        <li class="Districts"><a href="gallery.html">Polonnaruwa District</a></li>
+        <li class="Districts"><a href="gallery.html">Puttalam District</a></li>
+        <li class="Districts"><a href="gallery.html">Ratnapura District</a></li>
+        <li class="Districts"><a href="gallery.html">Tricomalee District</a></li>
+        <li class="Districts"><a href="gallery.html">Vavuniya Distict</a></li>
+        <li class="Districts"><a href="gallery.html">Jaffna District</a></li>
+
+    </ol>
+      
+    
+    <script>
+        function search_Districts() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('Districts');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+    </script> 
+</body>
+  
+</html>

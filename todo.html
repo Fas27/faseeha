@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+
+
+<body>
+    <style type="text/css">
+       body { 
+           background-color: rgb(228, 228, 245);
+       }
+    </style>
+
+    <div id="app">
+        <div class="container">
+            <h1>Todo list (Place References)</h1>
+            
+
+            <div v-if="!isEditing">
+                <input type="text" v-model="todo">
+                <input type="submit" value="add" @click="storeTodo">
+            </div>
+
+
+            <div v-else>
+                <input type="text" v-model="todo">
+                <input type="submit" value="update" @click="updateTodo">
+            </div>
+
+
+            <ol>
+                <li v-for="(todo, index) in todos">
+                    {{ todo }}
+
+
+                    <button @click="editTodo(index, todo)">Edit</button>
+                    <button @click="deleteTodo(index)">Delete</button>
+
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    
+    <script>
+
+        new Vue({
+
+            el: '#app',
+
+            data:{
+                isEditing: false,
+                selectedIndex: null,
+                todo: '',
+                todos: ['Sigiriya' , 'Yala National Park']
+            },
+
+            methods: {
+                storeTodo() {
+                    this.todos.push(this.todo)
+                    this.todo=''
+                },
+
+                editTodo(index, todo) {
+                    this.todo= todo
+                    this.selectedIndex= index
+                    this.isEditing= true
+                },
+
+                updateTodo() {
+                    this.todos.splice(this.selectedIndex, 1, this.todo)
+                    this.isEditing= false
+                },
+
+                deleteTodo(index) {
+                    this.todos.splice(index, 1)
+                }
+            }
+        })
+    </script>
+    <br>
+    <br>
+    <br>
+     <h2><a href="Home.html">BACK TO HOME</a></button></h2>
+</body>
+</html>

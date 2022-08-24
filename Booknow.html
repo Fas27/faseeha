@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Document</title>
+   
+  </head>
+  <body>
+  <style type="text/css">
+  *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+   margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-book {
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, #66a5ad, #c4dfe6);
+}
+
+.book {
+  width: 60%;
+  height: 60%;
+  background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      transparent 50%
+    ),
+    url("https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: 100%;
+  background-position: right;
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
+}
+
+.heading {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: #07575b;
+}
+
+.form__group {
+  margin-bottom: 2rem;
+}
+.form__group:nth-child(3) {
+  margin-bottom: 5rem;
+}
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(196, 223, 230, 0.4);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+}
+
+
+
+.form__label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.form__radio-input {
+  display: none;
+}
+
+.form__radio-label {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #07575b;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+
+
+}
+</style>
+    <section class="section-book">
+      <div class="book">
+        <div class="book__form">
+          <form action="#" class="form">
+            <h2 class="heading">
+              Start booking now
+            </h2>
+            <div class="form__group">
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Full name"
+                id="name"
+                required
+              />
+              <label for="name" class="form__label">Full name</label>
+            </div>
+			<div class="form__group">
+              <input
+                type="email"
+                class="form__input"
+                placeholder="Email address"
+                
+              />
+              <label for="email" class="form__label">Email address</label>
+            </div>
+			<div class="form__group">
+              <div class="form__radio-group">
+                <input
+                  type="radio"
+                  class="form__radio-input"
+                  id="small"
+                  name="size"
+                />
+                <label for="small" class="form__radio-label">
+                  <span class="form__radio-button"></span>
+                  Small tour group
+                </label>
+              </div>
+
+              <div class="form__radio-group">
+                <input
+                  type="radio"
+                  class="form__radio-input"
+                  id="large"
+                  name="size"
+                />
+                <label for="large" class="form__radio-label">
+                  <span class="form__radio-button"></span>
+                  Large tour group
+                </label>
+              </div>
+            </div>
+			<div class="form__group">
+              <h2><a href="Home.html">Next step</a></button></h2>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
